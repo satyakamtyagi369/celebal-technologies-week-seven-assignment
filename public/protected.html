@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Protected</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Protected Page</h2>
+    <p id="content">Loading...</p>
+  </div>
+
+  <script>
+    const token = localStorage.getItem('token');
+    fetch('/api/protected', {
+      headers: { 'Authorization': `Bearer ${token}` }
+    })
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('content').innerText = data.message;
+    })
+    .catch(() => {
+      document.getElementById('content').innerText = 'Access denied';
+    });
+  </script>
+</body>
+</html>
