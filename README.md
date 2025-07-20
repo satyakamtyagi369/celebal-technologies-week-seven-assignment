@@ -25,7 +25,7 @@ How to Run This Project
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/jwt-auth-api.git
+git clone https://github.com/satyakamtyagi369/celebal-technologies-week-seven-assignment.git
 cd jwt-auth-api
 
 npm install
