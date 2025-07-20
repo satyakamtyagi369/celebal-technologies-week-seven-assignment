@@ -1,12 +1,12 @@
 const jwt = require('jsonwebtoken');
 
-// Update this user list to match the credentials you're sending
+//credentials ko match karne ke liye hardcoded users array
 const users = [{ username: 'celebal', password: 'celebal123' }];
 
 exports.login = (req, res) => {
   const { username, password } = req.body;
 
-  console.log('Login attempt:', username, password); // Debugging log
+  console.log('Login attempt:', username, password);
 
   const user = users.find(u => u.username === username && u.password === password);
 
